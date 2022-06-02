@@ -27,7 +27,56 @@ Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, consid
 
 """
 
-
+import math
 def calcular_latas_e_preco_de_tinta():
     """Escreva aqui em baixo a sua solução"""
-     area_pintada = float(input("Coloque o valor da area em m² aqui: ")
+    area_metros = float(input("Coloque o valor da area em m² aqui: "))
+    cobertura = math.ceil((area_metros/6) + (area_metros/6 *0.1)) #quantos litros eu preciso pra pintar certa area
+
+    #tabela preços
+    lata_18_preco = 80
+    galao_preco = 25
+    #litros
+    lata_litros = 18
+    galao_litros = 3.6
+
+    quant_lata = math.ceil(cobertura/lata_litros) #eu divido quantos litros eu preciso pelo tamanho de litros da lata e essa conta vai me dar quantos litros eu preciso, se for 1,2 vai arrendodar pra duas de uma vez
+    quant_galao = math.ceil(cobertura/galao_litros)
+    litros_comprados_lata = quant_lata* lata_litros
+    litros_comprados_galao = quant_galao*galao_litros
+
+    resto_resto = cobertura % 18
+    galaozinho = math.ceil(resto_resto/3.6)
+    galaozinho1 = resto_resto/3.6
+
+    #litros_comprados FLOAT
+
+    litros_comprados_galao_float = galaozinho* galao_litros
+
+    soma_preco_galao = quant_galao*galao_preco
+    soma_preco = quant_lata*lata_18_preco
+
+    resto_lata = litros_comprados_lata % cobertura 
+    resto_galao = litros_comprados_galao % cobertura
+
+
+    quant_lata_float = cobertura/lata_litros
+    quant_lata_floor = math.floor(cobertura/lata_litros)
+
+    
+    soma2 = quant_lata_floor*lata_18_preco
+    soma3 = galaozinho * galao_preco
+    soma_total = soma2 + soma3
+    
+    total_litros = (quant_lata_floor* lata_litros) +  (galaozinho*galao_litros)
+    resto_galao_lata = total_litros - cobertura
+
+    if quant_lata > 0:
+        print(f'Você deve comprar {cobertura} litros de tinta.')
+        print(f'Você pode comprar {quant_lata} lata(s) de 18 litros a um custo de R$ {soma_preco}. Vão sobrar {resto_lata:.1f} litro(s) de tinta.')
+        print(f'Você pode comprar {quant_galao} lata(s) de 3.6 litros a um custo de R$ {soma_preco_galao}. Vão sobrar {resto_galao:.1f} litro(s) de tinta.')
+
+    if resto_resto <= 10.8:
+        print(f'Para menor custo, você pode comprar {quant_lata_floor:.0f} lata(s) de 18 litros e {galaozinho} galão(ões) de 3.6 litros a um custo de R$ {soma_total:.0f}. Vão sobrar {resto_galao_lata:.1f} litro(s) de tinta.')
+
+

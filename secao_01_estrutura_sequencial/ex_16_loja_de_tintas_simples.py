@@ -27,5 +27,7 @@ def calcular_latas_e_preco_de_tinta():
     lata = int(0)
     if area_pintada < 54:
         print(f"Você deve comprar {lata + 1} lata(s) tinta ao custo de R$ {valor_lata:.2f}")
-    elif (area_pintada > 50) and (area_pintada <= 108):
+    elif (area_pintada > 54) and (area_pintada <= 108):
         print(f"Você deve comprar {lata + 2} lata(s) tinta ao custo de R$ {valor_lata*2:.2f}")
+
+#uma lata de 18 litros pinta 54m²
