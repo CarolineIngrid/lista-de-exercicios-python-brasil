@@ -18,3 +18,7 @@ Faça um Programa que leia três números e mostre-os em ordem decrescente.
 
 def ordenar_decrescente(x, y, z):
     """Escreva aqui em baixo a sua solução"""
+    banana = [x, y, z]
+    banana.sort(reverse=True)
+    print(f"{banana[0]}, {banana[1]}, {banana[2]}")
+
