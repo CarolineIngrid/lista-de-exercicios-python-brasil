@@ -27,7 +27,18 @@ def validar_data(data: str):
     # if data == '':
     #     print("'Data inválida'")
 
-    novo = int(data.split('/'))
-   
-    print(novo)
-    # elif data
+    novo = data.split('/')
+
+    if len(novo) != 3:
+        print("'Data inválida'")
+    else:
+        dia = int(novo[0])
+        mes = int(novo[1])
+        ano= int(novo[2])
+        if (dia > 31) or (mes > 12) or (ano == 0):
+            print("'Data inválida'")
+        elif (mes == 2) and (dia > 28):
+            print("'Data inválida'")
+        else:
+            print("'Data válida'")
+ 
