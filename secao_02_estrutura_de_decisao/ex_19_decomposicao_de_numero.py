@@ -48,44 +48,29 @@ Observando os termos no plural a colocação do "e", da vírgula entre outros. E
     '7 = 7 unidades'
 
 """
-
-
-from inspect import ClassFoundException
-
-
+import math
 def decompor_numero(numero: int):
     """Escreva aqui em baixo a sua solução"""
-    # if numero >= 1000:
-    #     print(f"'O número precisa ser menor que 1000'")
-    #     return
-    # if numero < 0:
-    #     print("'O número precisa ser positivo'")
-    #     return
+    
+    if numero >= 1000:
+        print(f"'O número precisa ser menor que 1000'")
+        return
+    if numero < 0:
+        print("'O número precisa ser positivo'")
+        return
+
+    centena = math.floor(numero/100)
+    dezena = math.floor((numero - (centena*100))/10)
+    unidade = math.floor(numero-(centena*100)-(dezena*10))
+
     
 
-    valores = [100, 10, 1]
-    resto = numero
-    divisoes = []
-    for i in range(len(valores)):
-       valor = divmod(resto, valores[i])
-       quantidade, resto = valor
-       divisoes.append(quantidade)
-       centena = (valor-(centena*100))/10
-
-    if numero < 100:
-        print(f'{numero} = {divisoes[1]} dezenas e  {divisoes[2]}unidades')
-        numero > 100 
-        3 10 <= numero < 100
-        numero < 10
-
-        if (centena > 1 ):
-                textoCentena = "centenas"
-
-        elif (centena == 1):
-                textoCentena = "centena"
-
-        if (dezena > 1):
-                textoDezena = "dezenas"
-
-        elif (dezena == 1):
-                textoDezena = "dezena"
+    print("'", end='')
+    print(f'{numero} = ', end='')
+    if(centena):
+        print(f'{centena} centena{"s" if centena>1 else ""}{(", " if unidade else " e ") if dezena else (" e " if unidade else "")}', end='')
+    if(dezena):
+        print(f'{dezena} dezena{"s" if dezena>1 else ""}{" e " if unidade else ""}', end='')
+    if(unidade):
+        print (f'{unidade} unidade{"s" if unidade>1 else ""}', end='')
+    print("'")

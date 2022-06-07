@@ -42,23 +42,27 @@ def fazer_operacao_e_classificar(n_1: float, n_2: float, operacao: str):
       resultado = n_1 * n_2
 
     print(f"Resultado: {resultado:.2f}")
+
     if resultado < 0:
       positivo_ou_negativo = 'negativo'
-      print(f"Número é {positivo_ou_negativo} e {inteiro_ou_decimal}.")
+      # print(f"Número é {positivo_ou_negativo} e {inteiro_ou_decimal}.")
+    elif resultado == 0:
+      positivo_ou_negativo = 'neutro'
     else:
       positivo_ou_negativo = 'positivo'
-      print
     
-    if resultado == int:
-      inteiro_ou_decimal = 'inteiro'
-    else:
-      inteiro_ou_decimal = 'decimal'
-      print(f"Número é {positivo_ou_negativo} e {inteiro_ou_decimal}.")
-
     if resultado% 2 == 1:
         par_ou_impar = 'impar'
     else:
         par_ou_impar = 'par'
+
+    if (resultado * 10) % 10 == 0:
+      inteiro_ou_decimal = 'inteiro'
+      print(f'Número é {par_ou_impar}, {positivo_ou_negativo} e {inteiro_ou_decimal}.')
+    else:
+      inteiro_ou_decimal = 'decimal'
+      print(f'Número é {positivo_ou_negativo} e {inteiro_ou_decimal}.')
+
       
    
     # print(f"Número é {positivo_ou_negativo}, {par_ou_impar} e {inteiro_ou_decimal}.")
