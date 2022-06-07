@@ -51,5 +51,45 @@ até R$ 99999,99
 """
 
 
+from pprint import pprint
+
+
 def calcular_salario_liquido(valor_hora: float, horas_trabalhadas: int):
     """Escreva aqui em baixo a sua solução"""
+    # inss = 0.10
+    # sindicato = 0.03
+    # fgts = 0.11
+    salario_bruto = valor_hora * horas_trabalhadas
+
+    inss_desconto = salario_bruto - (salario_bruto*0.10)
+    sindicato_desconto = salario_bruto - (salario_bruto*0.03)
+    fgts_desconto = salario_bruto - (salario_bruto*0.11)
+
+    inss = salario_bruto*0.10
+    sindicato = salario_bruto*0.03
+    fgts = salario_bruto*0.11
+
+    if salario_bruto <= 900:
+      ir_demonstrativo = 0
+      ir = 0
+    elif salario_bruto <= 1500:
+      ir_demonstrativo = 5
+      ir = 0.05
+    elif salario_bruto <= 2500:
+      ir_demonstrativo = 10
+      ir = 0.10
+    else:
+      ir_demonstrativo = 20
+      ir = 0.20
+
+    imposto = salario_bruto*ir
+    salario_liquido = salario_bruto -(imposto+inss+sindicato)
+    descontos = imposto+inss+sindicato
+    print(f"Salário Bruto: (R$ {valor_hora:.2f} * {horas_trabalhadas})   : R$ {salario_bruto:.2f}")
+    print(f"(-) IR ({ir_demonstrativo}%) " .ljust(34),   f": R$  {imposto:>7.2f}")
+    print(f"(-) INSS (10%) " .ljust(34),  f": R$  {inss:>7.2f}")
+    print(f"(-) Sindicato (3%) " .ljust(34),  f": R$  {sindicato:>7.2f}")
+    print(f"FGTS (11%) " .ljust(34),  f": R$  {fgts:>7.2f}")
+    print(f"Total de descontos " .ljust(34),              f": R$  {descontos:>7.2f}")
+    print(f"Salário Liquido " .ljust(34), f": R$ {salario_liquido:>7.2f}")               
+
