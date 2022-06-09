@@ -34,3 +34,13 @@ até que o usuário informe um valor válido.
 
 def obter_numero_valido():
     """Escreva aqui em baixo a sua solução"""
+    lista =('0','1','2','3','4','5','6','7','8','9','10')
+    n = input(str(f"Número aqui: "))
+    
+    while n not in lista:
+       print(f"Número inválido: {n}")
+       n = input(f"Número aqui: ")
+    else:
+        print(n)
+       
+
