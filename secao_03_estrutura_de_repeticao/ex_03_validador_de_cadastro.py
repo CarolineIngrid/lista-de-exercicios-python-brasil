@@ -41,15 +41,28 @@ Faça um programa que leia e valide as seguintes informações:
 def cadastrar_usuario(nome: str, idade: int, salario: float, sexo: str, estado_civil: str):
     """Escreva aqui em baixo a sua solução"""
 
-  # Nome: maior que 3 caracteres;
-  #   Idade: entre 0 e 150;
-  #   Salário: maior que zero;
-  #   Sexo: 'f' ou 'm';
-  #   Estado Civil: 's', 'c', 'v', 'd';
-   
-    while (len(nome) < 3) and (idade <0 and idade > 150) and (salario < 0) and (sexo !='m' or sexo !='f') and (estado_civil!= 's' or estado_civil!='c' or estado_civil !='v' or estado_civil !='d'):
-      print(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
-      print(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
-      print(f"Erro: o salário precisa ser positivo, não pode ser {salario}")
-    else:
+    erros = []
+    estados_civis = ('s','c', 'v','d')
+    sexos = ('m','f')
+
+    if len(nome) < 3:
+      erros.append(f"Erro: o nome precisa ter 3 letras ou mais, não pode ser {nome}")
+
+    if idade <0 or idade > 150:
+      erros.append(f"Erro: a idade precisa estar entre 0 e 150, não pode ser {idade}")
+    
+    if salario <= 0:
+      erros.append(f"Erro: o salário precisa ser positivo, não pode ser {salario}")
+    
+    if sexo not in sexos:
+      erros.append(f'Erro: o sexo precisa ser "m" ou "f", não pode ser "{sexo}"')
+
+    if estado_civil not in estados_civis:
+      erros.append(f'Erro: o estado civil precisa ser "s", "c", "v" ou "d", não pode ser "{estado_civil}"')
+
+    if not erros:
       print("Cadastro realizado com sucesso")
+
+    for erro in erros:
+      print(erro)
+
