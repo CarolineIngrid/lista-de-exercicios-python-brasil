@@ -40,8 +40,14 @@ def escrever_numeros_de_1_a_20(formato:str) -> str:
             print(i)
             i += 1
     else:
+        i = 1
         while i <= 20:
-            print(i, end = ' ')
+            if i != 20:
+                print(i, end = ' ')
+            else:
+                print(i, end = '')
             i += 1
+            
+        
 
 
