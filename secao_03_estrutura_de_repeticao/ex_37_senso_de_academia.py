@@ -56,3 +56,54 @@ da média das alturas e dos pesos dos clientes
 
 def rodar_senso():
     """Escreva aqui em baixo a sua solução"""
+
+    # peso = 0
+    # altura = 0
+    while True:
+        maior_peso = 0
+        menor_peso = 0
+        maior_altura = 0
+        menor_altura = 0
+
+        nome  = input("nome")
+        altura = input("altura")
+        peso = input("peso")
+
+
+
+
+
+        # while altura:
+        #     altura = input("Coloque a altura aqui: ")
+        #     alturas.append(altura)
+        #     print(max(alturas))
+
+        # for i in altura:
+        #     if i > maior:
+        #         maior = i
+        #     elif i < menor:
+        #         menor = i
+        #     soma += i
+        
+
+
+
+
+
+
+
+        # valores = float(input('digite os valores: '))
+        # if valores == 0:
+        #     colinha(total)
+        #     total = 0
+        # elif valores == -1 and total == 0:
+        #     print("Lojas Tabajara")
+        #     print("-------------------")
+        #     print("Programa encerrado!")
+        #     break
+        # elif valores == -1 and total > 0:
+        #     colinha(total)
+        #     print("Programa encerrado!")
+        #     break
+        
+        # total += valores
