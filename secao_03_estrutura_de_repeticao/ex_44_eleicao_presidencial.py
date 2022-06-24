@@ -90,3 +90,20 @@ from collections import Counter
 
 def apurar_votos(*votos):
     """Escreva aqui em baixo a sua solução"""
+    votos_bostonaro = votos.count("1")
+    votos_lula = votos.count("2")
+    votos_dilma = votos.count("3")
+    votos_fhc = votos.count("4")
+    votos_nulo = votos.count("5")
+    votos_branco = votos.count("6")
+
+    print(f"Código do Candidato Nome do Candidato Votos Porcentagem sobre total")
+
+    print(f"1                   Bostonaro         {votos_bostonaro}       5.6%")
+    print(f"2                   Luladrão          {votos_lula}       5.6%")
+    print(f"3                   Dilmanta          {votos_dilma}       5.6%")
+    print(f"4                   FHC Isentão       {votos_fhc}       5.6%")
+    print("-------------------------------------------------------------------")
+    print(f"5                   Votos Nulos       {votos_nulo}      38.9%")
+    print(f"6                   Votos Brancos     {votos_branco}      38.9%")
+

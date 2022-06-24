@@ -56,3 +56,35 @@ para registrar a próxima compra.
 
 def rodar_programa_de_caixa():
     """Escreva aqui em baixo a sua solução"""
+    def colinha(total):
+        dinheiro = float(input("din din aqui: "))
+        troco = dinheiro - total
+        print("Lojas Tabajara")
+        print(f'Total'.ljust(9), f': R${total:>7.2f}')
+        print(f'Dinheiro'.ljust(9), f': R${dinheiro:>7.2f}')
+        print(f'Troco'.ljust(9), f': R${troco:>7.2f}')
+        print("-------------------")
+    
+    total = 0
+    dinheiro = 0
+    troco = 0
+    while True:
+        valores = float(input('digite os valores: '))
+        if valores == 0:
+            colinha(total)
+            total = 0
+        elif valores == -1 and total == 0:
+            print("Lojas Tabajara")
+            print("-------------------")
+            print("Programa encerrado!")
+            break
+        elif valores == -1 and total > 0:
+            colinha(total)
+            print("Programa encerrado!")
+            break
+        
+        total += valores
+        
+        
+        
+    
