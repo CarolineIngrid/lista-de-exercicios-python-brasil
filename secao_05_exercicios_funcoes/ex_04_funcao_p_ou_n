@@ -1,0 +1,11 @@
+"""
+Exercício 04 da seção de funções da Python Brasil:
+https://wiki.python.org.br/ExerciciosFuncoes
+
+Faça um programa, com uma função que necessite de um argumento. 
+A função retorna o valor de caractere ‘P’, se seu argumento for positivo. 
+E ‘N’, se seu argumento for zero ou negativo.
+
+    >>> (-1)
+"""
+def positivou_ou_negativou(n): 
